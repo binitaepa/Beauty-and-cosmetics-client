@@ -24,7 +24,7 @@ const Header = () => {
 { navLinks}
       </ul>
     </div>
-    <img className="w-[100px] h[100px] mb-5" src={logo} alt="" />
+    <img className="w-[100px] h[100px] mb-8" src={logo} alt="" />
     <a className="btn btn-ghost normal-case text-xl"><span className="text-pink-500 font-medium italic border-b-2 border-red-400" >BeautyHub</span></a>
   </div>
   <div className="navbar-center hidden lg:flex">
