@@ -1,8 +1,10 @@
+import { Link } from "react-router-dom";
 
 
 const CardProducts = ({card}) => {
-    const {photo,name}=card;
+    const {_id,photo,name}=card;
     return (
+       <Link to={`/carddetails/${_id}`}>
         <div>
 <div className="card w-96 bg-pink-100 shadow-xl">
   <figure className="px-2 pt-2">
@@ -14,7 +16,7 @@ const CardProducts = ({card}) => {
     
   </div>
 </div>
-        </div>
+        </div></Link>
     );
 };
 
