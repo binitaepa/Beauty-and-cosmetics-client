@@ -9,6 +9,8 @@ import {
 import Root from './components/Root/Root.jsx';
 import ErrorPage from './components/ErrorPage/ErrorPage.jsx';
 import Home from './components/Pages/Home/Home.jsx';
+import AddProduct from './components/Pages/AddProduct/AddProduct.jsx';
+import InsertCardProducts from './components/InsertCardProducts/InsertCardProducts.jsx';
 
 const router = createBrowserRouter([
   {
@@ -20,10 +22,19 @@ const router = createBrowserRouter([
         path:'/',
         element:<Home></Home>,
         errorElement:<ErrorPage></ErrorPage>,
+        loader:()=>fetch('http://localhost:5000/cards')
       
 
         
     },
+    {
+      path:'/addproduct',
+      element:<AddProduct></AddProduct>
+    },
+    {
+      path:'insertcardproducts',
+      element:<InsertCardProducts></InsertCardProducts>
+    }
     ]
   },
 ]);

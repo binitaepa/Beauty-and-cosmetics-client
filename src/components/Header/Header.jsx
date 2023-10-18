@@ -6,7 +6,7 @@ import logo from '../Header/Logo/lipstickpng.png'
 const Header = () => {
     const  navLinks=<>
     <li ><NavLink className='hover:text-red-500' to='/'>Home</NavLink></li>
-       <li><NavLink className='hover:text-red-500' to='/about'>Add Product</NavLink></li>
+       <li><NavLink className='hover:text-red-500' to='/addproduct'>Add Product</NavLink></li>
        <li><NavLink className='hover:text-red-500' to='/news'>My Cart</NavLink></li>
        
       

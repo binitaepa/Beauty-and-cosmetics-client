@@ -5,7 +5,7 @@ import img from '../Banner/ImageBanner/close-up-collection-make-up-beauty-produc
 const Banner = () => {
     return (
         <div>
-            <div className="hero md:min-h-screen w-auto bg-pink-100">
+            <div className="hero  w-auto bg-pink-100">
   <div className="hero-content flex-col lg:flex-row">
     <img src={img} className="max-w-[400px] h-full rounded-lg shadow-2xl" />
     <div className="w-[500px]">
