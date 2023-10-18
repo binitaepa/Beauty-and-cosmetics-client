@@ -1,13 +1,23 @@
 import { Link, NavLink } from "react-router-dom"
 import logo from '../Header/Logo/lipstickpng.png'
+import { useContext } from "react";
+import { AuthContext } from "../Providers/AuthProvider/AuthProvider";
 
 
 
 const Header = () => {
+    const {user,logOut} =useContext(AuthContext);
+
+    const handleSignOut = () => {
+        logOut()
+            .then()
+            .catch()
+    }
     const  navLinks=<>
     <li ><NavLink className='hover:text-red-500' to='/'>Home</NavLink></li>
-       <li><NavLink className='hover:text-red-500' to='/addproduct'>Add Product</NavLink></li>
-       <li><NavLink className='hover:text-red-500' to='/news'>My Cart</NavLink></li>
+       {user && <>
+        <li><NavLink className='hover:text-red-500' to='/addproduct'>Add Product</NavLink></li>
+       <li><NavLink className='hover:text-red-500' to='/news'>My Cart</NavLink></li></>}
        
       
 
@@ -36,9 +46,20 @@ const Header = () => {
    
   </div>
  
+  {
+                    user ?
+                        <>
+                        <span className="mr-2 ">{user.name}</span>
+                        <button onClick={handleSignOut} className="btn bg-pink-400 text-white mr-2">Sign Out</button>
+                        <div className="w-15 rounded-full">
+          
+        </div>
+                        </>
+                        :
                         <Link to="/login">
-                            <button className="btn bg-pink-600 italic p-2 text-white">Login</button>
+                            <button className="btn bg-pink-400 text-white">Login</button>
                         </Link>
+                }
                 
 </div>
         </div>

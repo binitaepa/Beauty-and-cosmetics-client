@@ -15,6 +15,7 @@ import CardDetails from './components/cardDetails/CardDetails.jsx';
 import PrivateRoute from './components/Routes/PrivateRoutes.jsx';
 import Register from './components/Pages/Register/Register.jsx';
 import AuthProvider from './components/Providers/AuthProvider/AuthProvider.jsx';
+import Login from './components/Pages/Login/Login.jsx';
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
 {
   path:'/register',
   element:<Register></Register>
+},
+{
+  path:'/login',
+  element:<Login></Login>
 },
     {
       path:'insertcardproducts',
