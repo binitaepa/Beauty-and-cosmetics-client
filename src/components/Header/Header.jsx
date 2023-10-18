@@ -2,11 +2,12 @@ import { Link, NavLink } from "react-router-dom"
 import logo from '../Header/Logo/lipstickpng.png'
 import { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProvider/AuthProvider";
-
+import profilePic from '../../assets/user.png'
 
 
 const Header = () => {
     const {user,logOut} =useContext(AuthContext);
+    console.log(user)
 
     const handleSignOut = () => {
         logOut()
@@ -49,10 +50,15 @@ const Header = () => {
   {
                     user ?
                         <>
-                        <span className="mr-2 ">{user.name}</span>
+                        <div className="flex flex-col">
+                        <p className="w-[200px] text-pink-400 font-bold">{user.displayName}</p>
+                        <p className="w-[200px] text-pink-400 font-bold">{user.email}</p>
+                        </div>
                         <button onClick={handleSignOut} className="btn bg-pink-400 text-white mr-2">Sign Out</button>
                         <div className="w-15 rounded-full">
-          
+                        
+                        <img src={profilePic} />
+
         </div>
                         </>
                         :

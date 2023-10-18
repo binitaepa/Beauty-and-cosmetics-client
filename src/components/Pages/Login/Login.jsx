@@ -9,6 +9,7 @@ import { AuthContext } from "../../Providers/AuthProvider/AuthProvider";
 
 const Login = () => {
     const {signIn}=useContext(AuthContext)
+   
     const [registerError, setRegisterError] = useState('');
     const [success, setSuccess] = useState('');
 const location=useLocation();
@@ -46,7 +47,7 @@ const navigate=useNavigate();
   <div className="hero-content flex-col ">
   <h2 className="text-3xl">Please Login</h2>
    
-    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-pink-200">
       <form onSubmit={handleLogin} className="card-body">
         <div className="form-control">
           <label className="label">
@@ -64,7 +65,7 @@ const navigate=useNavigate();
           </label>
         </div>
         <div className="form-control mt-6">
-          <button className="btn btn-primary">Login</button>
+          <button className="btn btn-primary bg-pink-400 text-white">Login</button>
         </div>
       </form>
       {
