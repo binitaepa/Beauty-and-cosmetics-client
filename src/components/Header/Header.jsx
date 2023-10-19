@@ -35,6 +35,7 @@ const Header = () => {
         <li><NavLink className='hover:text-red-500' to='/addproduct'>Add Product</NavLink></li>
        <li><NavLink className='hover:text-red-500' to='/news'>My Cart</NavLink></li></>}
        
+      <li><NavLink>News</NavLink></li>
       
 
 </>

@@ -10,7 +10,7 @@ const InsertCardProducts = () => {
         const name = form.name.value;
         const product={photo,name};
         console.log(product)
-        fetch('http://localhost:5000/cards', {
+        fetch('https://cosmetics-and-beauty-server.vercel.app/cards', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -59,8 +59,9 @@ const CardDetails = () => {
     <p className="text-pink-400 font-bold">PRICE: {brandDetail.price}$</p>
     <p className="text-red-400 font-bold">Rating: {brandDetail.rating}</p>
    
-   <div className="flex justify-evenly gap-8"> <button className="bg-gray-400 btn text-white" >Details</button>
-    <button className="bg-red-400 btn text-white">update</button></div>
+   <div className="flex justify-evenly gap-8">
+    <Link to={`/productdetail`}> <button className="bg-gray-400 btn text-white" >Details</button></Link>
+    <Link to={`/updatecosmetics/${brandDetail._id}`}><button className="bg-red-400 btn text-white">update</button></Link></div>
     
   </div>
 </div>

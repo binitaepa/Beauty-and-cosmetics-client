@@ -16,6 +16,8 @@ import PrivateRoute from './components/Routes/PrivateRoutes.jsx';
 import Register from './components/Pages/Register/Register.jsx';
 import AuthProvider from './components/Providers/AuthProvider/AuthProvider.jsx';
 import Login from './components/Pages/Login/Login.jsx';
+import UpdateCosmetics from './components/Pages/UpdateCosmetics/UpdateCosmetics.jsx';
+import ProductDetails from './components/productDetails/ProductDetails.jsx';
 
 const router = createBrowserRouter([
   {
@@ -27,7 +29,7 @@ const router = createBrowserRouter([
         path:'/',
         element:<Home></Home>,
         errorElement:<ErrorPage></ErrorPage>,
-        loader:()=>fetch('https://cosmetics-and-beauty-server-9af7sioka-binitas-projects.vercel.app/cards')
+        loader:()=>fetch('https://cosmetics-and-beauty-server.vercel.app/cards')
       
 
         
@@ -51,8 +53,15 @@ const router = createBrowserRouter([
     {
       path:'/carddetails/:id',
       element:<PrivateRoute><CardDetails></CardDetails></PrivateRoute>,
-      loader:()=>fetch('https://cosmetics-and-beauty-server-9af7sioka-binitas-projects.vercel.app/cards')
+      loader:()=>fetch('https://cosmetics-and-beauty-server.vercel.app/cards')
 
+    },
+    { path:'/productdetail',
+            element:<PrivateRoute><ProductDetails></ProductDetails></PrivateRoute>},
+    {
+      path:'/updatecosmetics/:id',
+      element:<PrivateRoute><UpdateCosmetics></UpdateCosmetics></PrivateRoute>,
+loader:({ params }) => fetch(`https://cosmetics-and-beauty-server.vercel.app/cards/${params.id}`)
     }
     ]
   },
