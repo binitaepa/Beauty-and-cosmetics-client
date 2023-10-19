@@ -50,7 +50,7 @@ const router = createBrowserRouter([
     },
     {
       path:'/carddetails/:id',
-      element:<CardDetails></CardDetails>,
+      element:<PrivateRoute><CardDetails></CardDetails></PrivateRoute>,
       loader:()=>fetch('http://localhost:5000/cards')
 
     }
