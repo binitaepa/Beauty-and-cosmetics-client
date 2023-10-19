@@ -1,11 +1,26 @@
 import { Link, NavLink } from "react-router-dom"
 import logo from '../Header/Logo/lipstickpng.png'
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Providers/AuthProvider/AuthProvider";
 import profilePic from '../../assets/user.png'
 
 
+
 const Header = () => {
+  const [theme,setTheme]=useState(localStorage.getItem('theme')? localStorage.getItem('theme'): "light")
+  useEffect(()=>{
+    localStorage.setItem('theme',theme);
+    const localTheme=localStorage.getItem('theme');
+    document.querySelector('html').setAttribute('data-theme',localTheme)
+  },[theme]);
+  const handleToggle=(e)=>{
+    if(e.target.checked){
+        setTheme('dark')
+    }
+    else{
+        setTheme('light')
+    }
+  }
     const {user,logOut} =useContext(AuthContext);
     console.log(user)
 
@@ -24,7 +39,7 @@ const Header = () => {
 
 </>
     return (
-        <div>
+        <div >
               <div className="navbar ">
   <div className="navbar-start">
     <div className="dropdown">
@@ -44,6 +59,7 @@ const Header = () => {
     </ul>
   </div>
   <div className="navbar-end">
+ 
    
   </div>
  
@@ -51,8 +67,8 @@ const Header = () => {
                     user ?
                         <>
                         <div className="flex flex-col">
-                        <p className="w-[200px] text-pink-400 font-bold">{user.displayName}</p>
-                        <p className="w-[200px] text-pink-400 font-bold">{user.email}</p>
+                        <p className="md:w-[200px] text-pink-400 font-bold">{user.displayName}</p>
+                        <p className="md:w-[200px] text-pink-400 font-bold">{user.email}</p>
                         </div>
                         <button onClick={handleSignOut} className="btn bg-pink-400 text-white mr-2">Sign Out</button>
                         <div className="w-15 rounded-full">
@@ -66,7 +82,7 @@ const Header = () => {
                             <button className="btn bg-pink-400 text-white">Login</button>
                         </Link>
                 }
-                
+             <input type="checkbox" onChange={handleToggle} className="toggle mr-2" />    
 </div>
         </div>
     );

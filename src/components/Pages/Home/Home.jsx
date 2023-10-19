@@ -10,6 +10,7 @@ const Home = () => {
         <div>
             
                 <Banner></Banner>  
+                
                 <ChooseToAdd></ChooseToAdd>
              
               <div className="grid md:grid-cols-2 gap-4 m-16 ">
