@@ -13,7 +13,7 @@ const CardDetails = () => {
      
     const brandDetail= brands.find(brandDetail=> brandDetail._id == id);
     return (
-        <div>
+        <div  className="items-center">
       <div className='items-center  flex align-middle justify-center'>
       <div className="carousel w-3/5 h-[1000px]">
   <div id="slide1" className="carousel-item relative w-full">
@@ -47,25 +47,23 @@ const CardDetails = () => {
 </div>
       </div>
 
-              <div className="card card-side w-96 bg-base-100 shadow-xl mb-10 mt-10">
-            <figure><img src='' alt="Movie" /></figure>
-            <div className="flex justify-between w-full pr-4">
-                <div>
-                    <h2 className="card-title">{brandDetail.name}</h2>
-                    <p>Brand Name</p>
-                    <p>Price</p>
-                    <p>Rating</p>
-                </div>
-                <div className="card-actions justify-end">
-                    <div className="btn-group btn-group-vertical space-y-4">
-                        <button className="btn">Details </button>
-                        <Link >
-                        <button className="btn">Update</button>
-                        </Link>
-                      
-                    </div>
-                </div>
-            </div>
+      <div className="flex items-center justify-center align-middle"> 
+<div className="card w-96 bg-pink-100  shadow-xl">
+  <figure className="px-2 pt-2">
+    <img src={brandDetail.productImage} alt="Shoes" className="rounded-xl w-full h-[300px]" />
+  </figure>
+  <div className="card-body items-center text-center">
+    <h2 className="card-title text-2xl  text-red-500">NAME: {brandDetail.productName}</h2>
+    <p className="text-pink-400 font-bold">BRAND NAME: {brandDetail.name}</p>
+    <p className="text-pink-400 font-bold"> TYPE: {brandDetail.type}</p>
+    <p className="text-pink-400 font-bold">PRICE: {brandDetail.price}$</p>
+    <p className="text-red-400 font-bold">Rating: {brandDetail.rating}</p>
+   
+   <div className="flex justify-evenly gap-8"> <button className="bg-gray-400 btn text-white" >Details</button>
+    <button className="bg-red-400 btn text-white">update</button></div>
+    
+  </div>
+</div>
         </div>
         </div>
     );
