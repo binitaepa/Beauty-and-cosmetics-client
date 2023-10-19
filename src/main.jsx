@@ -27,7 +27,7 @@ const router = createBrowserRouter([
         path:'/',
         element:<Home></Home>,
         errorElement:<ErrorPage></ErrorPage>,
-        loader:()=>fetch('http://localhost:5000/cards')
+        loader:()=>fetch('https://cosmetics-and-beauty-server-2tuq3wetj-binitas-projects.vercel.app/cards')
       
 
         
@@ -51,7 +51,7 @@ const router = createBrowserRouter([
     {
       path:'/carddetails/:id',
       element:<PrivateRoute><CardDetails></CardDetails></PrivateRoute>,
-      loader:()=>fetch('http://localhost:5000/cards')
+      loader:()=>fetch('https://cosmetics-and-beauty-server-2tuq3wetj-binitas-projects.vercel.app/cards')
 
     }
     ]

@@ -19,7 +19,7 @@ const AddProduct = () => {
         const newProduct = { photo, name, brandName, type, price, description, rating }
 
         console.log(newProduct);
-        fetch('http://localhost:5000/cosmetics', {
+        fetch('https://cosmetics-and-beauty-server-2tuq3wetj-binitas-projects.vercel.app/cosmetics', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
