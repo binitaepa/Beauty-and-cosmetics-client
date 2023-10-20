@@ -1,8 +1,11 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The Name of the website is beautyHub
 
-Currently, two official plugins are available:
+- Live Link:https://cosmetics-and-beauty.web.app
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- project contain 6 type of cosmetics Brand
+- Each brand gives different product
+- user can update it
+- user have to register first to see product
+- user have to login
